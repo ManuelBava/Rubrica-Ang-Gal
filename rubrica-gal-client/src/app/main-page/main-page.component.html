@@ -1,11 +1,17 @@
 <h1>Main-page Funge!</h1>
-<app-form-panel (aggiungiOutput)="agg($event, $event, $event)" ></app-form-panel>
+<app-form-panel  (aggiungiOutput)="agg($event)"></app-form-panel>
 <br><br>
 <table id="table">
-    <td>
-        Column1
-    </td>
-    <td>
-        Column2
-    </td>
+    <th>
+        Nome
+    </th>
+    <th>
+        Cognome
+    </th>
+    <th>
+        Telefono
+    </th>
+    <tr>
+        <td *ngFor let array of array>{{array}}</td>
+    </tr>
 </table>

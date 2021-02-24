@@ -6,16 +6,18 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./form-panel.component.css']
 })
 export class FormPanelComponent implements OnInit {
-  @Input() nome = "si";
-  @Input() cognome = "";
-  @Input() telefono = "";
-  @Output() aggiungiOutput = new EventEmitter<String>();
-  @Output() contaOutput = new EventEmitter<string>();
-  @Output() ricercaOutput = new EventEmitter<string>();
+  @Input() nome = "Funziona ";
+  @Input() cognome = "tutto";
+  @Input() telefono = "benissimo";
+  @Output() aggiungiOutput = new EventEmitter<string[]>();
+  @Output() contaOutput = new EventEmitter<[]>();
+  @Output() ricercaOutput = new EventEmitter<[]>();
 
   inputNome: string;
   inputCognome: string;
   inputTelefono: string;
+
+   array: string[] = []; 
 
   constructor() { }
 
@@ -25,21 +27,29 @@ export class FormPanelComponent implements OnInit {
     this.inputTelefono = this.telefono;
   }
 
-  aggiungi() {
-    this.aggiungiOutput.emit(this.nome);
-    this.aggiungiOutput.emit(this.cognome);
-    this.aggiungiOutput.emit(this.telefono);
+cancella_array()
+{
+  this.array = [];
+}
 
+  aggiungi() {
+    
+    this.array.push(this.inputNome);
+    this.array.push(this.inputCognome);
+    this.array.push(this.inputTelefono);
+    this.aggiungiOutput.emit(this.array);
+    this.cancella_array();
+    
   }
   conta() {
-    this.contaOutput.emit(this.nome);
-    this.contaOutput.emit(this.cognome);
-    this.contaOutput.emit(this.telefono);
-  }
-  ricerca() {
-    this.ricercaOutput.emit(this.nome);
-    this.ricercaOutput.emit(this.cognome);
-    this.ricercaOutput.emit(this.telefono);
-  }
+  //   this.contaOutput.emit(this.nome);
+  //   this.contaOutput.emit(this.cognome);
+  //   this.contaOutput.emit(this.telefono);
+   }
+   ricerca() {
+  //   this.ricercaOutput.emit(this.nome);
+  //   this.ricercaOutput.emit(this.cognome);
+  //   this.ricercaOutput.emit(this.telefono);
+   }
 
 }
