@@ -8,6 +8,8 @@ import { ErrorMessagePageComponent } from './error-message-page/error-message-pa
 import { MainPageComponent } from './main-page/main-page.component';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { CountPageComponent } from './count-page/count-page.component';
+import { FormPanelComponent } from './form-panel/form-panel.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { CountPageComponent } from './count-page/count-page.component';
     ErrorMessagePageComponent,
     MainPageComponent,
     SearchPageComponent,
-    CountPageComponent
+    CountPageComponent,
+    FormPanelComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
