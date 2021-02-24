@@ -6,16 +6,17 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./form-panel.component.css']
 })
 export class FormPanelComponent implements OnInit {
-  @Input() nome = "";
+  @Input() nome = "si";
   @Input() cognome = "";
   @Input() telefono = "";
-  @Output() aggiungiOutput = new EventEmitter<string>();
+  @Output() aggiungiOutput = new EventEmitter<String>();
   @Output() contaOutput = new EventEmitter<string>();
   @Output() ricercaOutput = new EventEmitter<string>();
 
   inputNome: string;
   inputCognome: string;
   inputTelefono: string;
+
   constructor() { }
 
   ngOnInit(): void {

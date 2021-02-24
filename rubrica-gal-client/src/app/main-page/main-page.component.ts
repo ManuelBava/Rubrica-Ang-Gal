@@ -12,4 +12,8 @@ export class MainPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  agg(n: string, c: string, t: string){
+    console.log(n, c, t);
+  }
+
 }
