@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Contatto } from '../contatto';
+import { MediatorService } from '../mediator.service';
 
 @Component({
   selector: 'app-main-page',
@@ -7,21 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(public med: MediatorService) { }
 
   nome: string;
   cognome: string;
   telefono: string;
-
-  array: string[];
 
   ngOnInit(): void {
   }
 
   prova: [string];
 
-  agg(a: string[]){
-    this.array= a;
+  agg(a:Contatto[]){
+    a = this.med.contatti;
     console.log(a);
   }
+
 }

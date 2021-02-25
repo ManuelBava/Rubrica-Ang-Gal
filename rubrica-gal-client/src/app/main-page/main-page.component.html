@@ -1,5 +1,5 @@
 <h1>Main-page Funge!</h1>
-<app-form-panel  (aggiungiOutput)="agg($event)"></app-form-panel>
+<app-form-panel (aggiungiOutput)="agg($event)"></app-form-panel>
 <br><br>
 <table id="table">
     <th>
@@ -11,7 +11,7 @@
     <th>
         Telefono
     </th>
-    <tr>
-        <td *ngFor let array of array>{{array}}</td>
+    <tr *ngFor ="let c of med.contatti">
+        {{c}}
     </tr>
 </table>
