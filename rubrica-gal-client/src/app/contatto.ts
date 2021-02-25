@@ -4,8 +4,8 @@ export class Contatto {
     telefono = "";
 
     constructor(n: string, c: string, t: string) {
-        n = this.nome;
-        c = this.cognome;
-        t = this.telefono;
+        this.nome =  n;
+        this.cognome = c;
+        this.telefono = t;
     }
 }

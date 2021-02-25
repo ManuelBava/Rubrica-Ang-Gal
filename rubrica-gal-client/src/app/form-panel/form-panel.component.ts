@@ -10,17 +10,16 @@ export class FormPanelComponent implements OnInit {
   @Input() nome = "Funziona ";
   @Input() cognome = "tutto";
   @Input() telefono = "benissimo";
-  @Output() aggiungiOutput = new EventEmitter<Contatto[]>();
+  @Output() aggiungiOutput = new EventEmitter<Contatto>();
   @Output() contaOutput = new EventEmitter<[]>();
   @Output() ricercaOutput = new EventEmitter<[]>();
 
-  object: Contatto;
+  contatto: Contatto;
 
   inputNome: string;
   inputCognome: string;
   inputTelefono: string;
 
-  array: Contatto[] = [];
 
   constructor() { }
 
@@ -28,19 +27,17 @@ export class FormPanelComponent implements OnInit {
     this.inputNome = this.nome;
     this.inputCognome = this.cognome
     this.inputTelefono = this.telefono;
-    this.object = new Contatto(this.inputNome, this.inputCognome, this.inputTelefono);
+    this.contatto = new Contatto(this.inputNome, this.inputCognome, this.inputTelefono);
   }
 
-  cancella_array() {
-    this.array = [];
-  }
+  // cancella_array() {
+  //   this.array = [];
+  // }
 
   aggiungi() {
-
-    this.array.push(this.object);
-    this.aggiungiOutput.emit(this.array);
-    this.cancella_array();
-
+    this.contatto = new Contatto(this.inputNome, this.inputCognome, this.inputTelefono);
+    this.aggiungiOutput.emit(this.contatto);
+    console.log(this.contatto);
   }
   conta() {
     //   this.contaOutput.emit(this.nome);

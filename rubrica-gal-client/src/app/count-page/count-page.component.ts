@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MediatorService } from '../mediator.service';
 
 @Component({
   selector: 'app-count-page',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CountPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(public med: MediatorService) {
+
+   }
 
   ngOnInit(): void {
   }

@@ -11,7 +11,15 @@
     <th>
         Telefono
     </th>
-    <tr *ngFor ="let c of med.contatti">
-        {{c}}
+    <tr *ngFor="let c of med.contatti; index as i ">
+        <td>
+            {{c.nome}}
+        </td>
+        <td>
+            {{c.cognome}}
+        </td>
+        <td>
+            {{c.telefono}}
+        </td>
     </tr>
 </table>

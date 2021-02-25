@@ -11,6 +11,7 @@ import { CountPageComponent } from './count-page/count-page.component';
 import { FormPanelComponent } from './form-panel/form-panel.component';
 import { FormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     MainPageComponent,
     SearchPageComponent,
     CountPageComponent,
-    FormPanelComponent
+    FormPanelComponent,
+   
   ],
   imports: [
     BrowserModule,

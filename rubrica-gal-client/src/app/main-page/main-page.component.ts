@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Contatto } from '../contatto';
 import { MediatorService } from '../mediator.service';
 
@@ -9,20 +10,25 @@ import { MediatorService } from '../mediator.service';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor(public med: MediatorService) { }
+  constructor(public med: MediatorService, private router: Router) { }
 
   nome: string;
   cognome: string;
   telefono: string;
+
+  numero_contatti: number;
 
   ngOnInit(): void {
   }
 
   prova: [string];
 
-  agg(a:Contatto[]){
-    a = this.med.contatti;
-    console.log(a);
+  agg(a: Contatto){
+    this.med.contatti.push(a);
+    }
+
+  conta(){
+    this.router.navigateByUrl("/count-page");
   }
 
 }
